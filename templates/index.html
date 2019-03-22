@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Site Properties -->
+    <title>Job title prediction</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/site.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/container.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/grid.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/image.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/menu.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/divider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/list.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/segment.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/dropdown.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/icon.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/semantic.min.css') }}">
+
+    <script src="{{ url_for('static', filename='dist/components/form.js') }}"></script>
+    <script src="{{ url_for('static', filename='dist/components/transition.js') }}"></script>
+
+    <style type="text/css">
+        body {
+        background-color: #FFFFFF;
+        }
+        .ui.menu .item img.logo {
+        margin-right: 1.5em;
+        }
+        .main.container {
+        margin-top: 7em;
+        }
+        .wireframe {
+        margin-top: 2em;
+        }
+        .ui.footer.segment {
+        margin: 5em 0em 0em;
+        padding: 1em 0em;
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="ui fixed inverted menu">
+    <div class="ui container">
+        <a href="/" class="header item">
+            <!--<img class="logo" src="assets/images/logo.png">-->
+            Job title prediction
+        </a>
+        <a href="/" class="item">Home</a>
+    </div>
+</div>
+
+<div class="ui main text container">
+
+    <h1 class="ui header">Online Job Prediction Tool</h1>
+
+    <form class="ui form" action="/predict_adoption" method="post">
+        <div class="field">
+            <label>Age</label>
+            <select class="ui selection dropdown" name="age">
+                <option value=""></option>
+                <option value="0">21-29</option>
+                <option value="1">40-49</option>
+                <option value="2">30-39</option>
+                <option value="3">17 or younger</option>
+                <option value="4">18-20</option>
+                <option value="5">50-59</option>
+                <option value="6">60 or older</option>
+        
+            </select>
+            <div class="field">
+                <label>IT experience</label>
+                <select class="ui selection dropdown" name="it_experience">
+                    <option value=""></option>
+                    <option value="1">less than one </option>
+                    <option value="2">1-2 years</option>
+                    <option value="3">2-4 years</option>
+                    <option value="4">3-5 years</option>
+                    <option value="8">6-10 years</option>
+                    <option value="11">11+ years</option>
+            
+                </select>
+                <div class="field">
+                    <label>Country</label>
+                    <select class="ui selection dropdown" name="country">
+                        <option value=""></option>
+                        <option value="0">Belarus </option>
+                        <option value="1">Neatherlands</option>
+                        <option value="2">France</option>
+                        <option value="3">Ukraine</option>
+                        <option value="4">UK</option>
+                        <option value="5">Poland</option>
+                        <option value="6">Austria </option>
+                        <option value="7">US</option>
+                        <option value="8">Brazil</option>
+                        <option value="9">Japan</option>
+                        <option value="10">Spain</option>
+                        <option value="11">Canada</option>
+                        <option value="12">Switzerland</option>
+                        <option value="13">Hungary</option>
+                        <option value="14">Russia</option>
+                        <option value="15">Malaysia</option>
+                        <option value="16">Sweden</option>
+                        <option value="17">Finland</option>
+                        <option value="18">Norway</option>
+                        <option value="19">Romania</option>
+                        <option value="20">Germany</option>
+                        <option value="21">Israel</option>
+                        <option value="22">South Korea</option>
+                        <option value="23">Lithuania</option>
+                        <option value="24">Estonia</option>
+                        <option value="25">Czech Rep</option>
+                        <option value="26">South Africa </option>
+                        <option value="27">other</option>
+                        <option value="28">Ireland</option>
+                        <option value="29">Turkey</option>
+                        <option value="30">Bulgaria</option>
+                        <option value="31">Italy</option>
+                        <option value="32">Mexico</option>
+                        <option value="33">China</option>
+                        <option value="34">India</option>
+                        <option value="35">Peru</option>
+                        <option value="36">Slovakia</option>
+                        <option value="37">Greece</option>
+                        <option value="38">Argentina</option>
+                        <option value="39">Portugal</option>
+                        <option value="40">Latvia</option>
+                        <option value="41">Belgium</option>
+                        <option value="42">Croatia </option>
+                        <option value="43">Denmark</option>
+                        <option value="44">Vietnam</option>
+                        <option value="45">Taiwan</option>
+                        <option value="46">Singapore</option>
+                        <option value="47">Bangladesh</option>
+                        <option value="48">Columbia </option>
+                        <option value="49">Hong Kong</option>
+                        <option value="50">Serbia</option>
+                        <option value="51">Slovenia</option>
+                        <option value="52">Chile</option>
+                        <option value="53">Indonesia</option>
+                        <option value="54">Australia</option>
+                        <option value="55">New Zealand</option>
+                        <option value="56">Pakistan</option>
+                        <option value="57">Philppines</option>
+                        <option value="58">Iran</option>
+                        
+                        
+                
+                    </select>
+        
+        <div class="field">
+            <label>Primary programming language</label>
+            <select class="ui selection dropdown" name="primary_language">
+                <option value=""></option>
+                <option value="Java">Java</option>
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+                <option value="Python">Python</option>
+                <option value="C#">C#</option>
+                <option value="PHP">PHP</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Scala">Scala</option>
+                <option value="HTML/CSS">HTML/CSS</option>
+                <option value="R">R</option>
+            </select>
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+    </form>
+
+</div>
+
+<div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui horizontal inverted small divided link list">
+            <a class="item" href="#">CEDB 1260 - BIG DATA ANALYTICS</a>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
